@@ -1,0 +1,11 @@
+<?php
+
+namespace %stub.namespace%;
+
+/**
+ * This file's main purpose is for unit testing the Builder.
+ */
+class %stub.class%
+{
+    %stub.insert%
+}

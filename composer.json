@@ -1,0 +1,34 @@
+{
+    "name": "jeroen-g/laravel-builder",
+    "description": "Build rapidly classes based on stubs.",
+    "keywords": [
+        "Laravel",
+        "Builder",
+        "build",
+        "classes",
+        "package"
+    ],
+    "homepage": "https://github.com/Jeroen-G/laravel-builder",
+    "license": "EUPL-1.1",
+    "authors": [
+        {
+            "name": "JeroenG",
+            "email": "jeroengjeroeng@gmail.com",
+            "homepage": "https://github.com/Jeroen-G"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5",
+        "illuminate/console": "~5",
+        "illuminate/filesystem": "~5",
+        "php" : "~5.5|~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeroenG\\LaravelBuilder\\": "src"
+        }
+    }
+}
