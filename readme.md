@@ -1,4 +1,4 @@
-# :package_name
+# Laravel Builder
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Build Status][ico-travis]][link-travis]
@@ -102,8 +102,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/jeroen-g/laravel-builder.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/Jeroen-G/laravel-builder/master.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/jeroen-g/laravel-builder
-[link-travis]: https://travis-ci.org/:vendor/:package_name
+[link-travis]: https://travis-ci.org/Jeroen-G/laravel-builder
 [link-contributors]: ../../contributors
