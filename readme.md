@@ -80,7 +80,7 @@ Not present at the moment, if you want to help with making this UI, please conta
 
 ## Change log
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [changelog](changelog.md) for more information what has changed recently.
 
 ## Testing
 
@@ -90,7 +90,7 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [contributing](contributing.md) for details.
 
 
 ## Credits
@@ -99,7 +99,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The EUPL License. Please see the [License File](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/jeroen-g/laravel-builder.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/Jeroen-G/laravel-builder/master.svg?style=flat-square
