@@ -170,7 +170,7 @@ class Builder
      */
     public function edit($path)
     {
-        $this->path = $this->files->dirname($path);
+        $this->path = realpath(base_path($this->files->dirname($path)));
         $this->class = $this->files->name($path);
         $this->setFile($path);
 
