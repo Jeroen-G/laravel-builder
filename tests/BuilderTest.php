@@ -3,7 +3,7 @@
 use JeroenG\LaravelBuilder\Builder;
 use Illuminate\Filesystem\Filesystem;
 
-class BuilderTest extends TestCase
+class BuilderTest extends \Orchestra\Testbench\TestCase
 {
 	/**
      * Runs before each test.
@@ -16,8 +16,10 @@ class BuilderTest extends TestCase
 		$this->b = new Builder($this->fs);
         
 		if( ! $this->fs->isDirectory(base_path() . '/tests/results')) {
-			$this->fs->makeDirectory(base_path() . '/tests/results');
+			$this->fs->makeDirectory(base_path() . '/tests/results', 0755, true);
 		}
+
+        Artisan::call('build:stubs');
 	}
 
 	/**
@@ -28,6 +30,14 @@ class BuilderTest extends TestCase
     	parent::tearDown();
 
         $this->fs->deleteDirectory(base_path() . '/tests/results');
+    }
+
+    /**
+     * For Testbench.
+     */
+    protected function getPackageProviders($app)
+    {
+       return ['JeroenG\LaravelBuilder\LaravelBuilderServiceProvider'];
     }
 
     public function test_running_builder()
@@ -127,7 +137,7 @@ class BuilderTest extends TestCase
 		$test1 = strpos($haystack, $needle1);
 		$test2 = strpos($haystack, $needle2);
 
-    	$this->b->edit($path)->replace('BuilderTestResult', 'EditedBuilderTestResult')->save();
+    	$this->b->edit(base_path($path))->replace('BuilderTestResult', 'EditedBuilderTestResult')->save();
         $this->b->reset();
 
 		$this->assertFileExists(base_path($path));

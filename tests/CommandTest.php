@@ -2,7 +2,7 @@
 
 use Illuminate\Filesystem\Filesystem;
 
-class CommandTest extends TestCase
+class CommandTest extends \Orchestra\Testbench\TestCase
 {
 	/**
      * Runs before each test.
@@ -14,8 +14,10 @@ class CommandTest extends TestCase
 		$this->fs = new Filesystem;
 
 		if( ! $this->fs->isDirectory(base_path() . '/tests/results')) {
-			$this->fs->makeDirectory(base_path() . '/tests/results');
+			$this->fs->makeDirectory(base_path() . '/tests/results', 0755, true);
 		}
+		
+        Artisan::call('build:stubs');
 	}
 
 	/**
@@ -26,6 +28,14 @@ class CommandTest extends TestCase
     	parent::tearDown();
 
         $this->fs->deleteDirectory(base_path() . '/tests/results');
+    }
+
+    /**
+     * For Testbench.
+     */
+    protected function getPackageProviders($app)
+    {
+       return ['JeroenG\LaravelBuilder\LaravelBuilderServiceProvider'];
     }
 
 	public function test_that_stubs_are_published()

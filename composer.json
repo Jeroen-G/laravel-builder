@@ -24,11 +24,13 @@
         "php" : "~5.5|~7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "orchestra/testbench": "~3.0"
     },
     "autoload": {
         "psr-4": {
             "JeroenG\\LaravelBuilder\\": "src"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
