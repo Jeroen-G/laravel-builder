@@ -1,0 +1,24 @@
+@extends('layouts.master')
+
+@section('content')
+
+	<h2>Edit a %stub.lcSingle%</h2>
+
+	<form action="%stub.route%/{{ $%stub.lcSingle%->id }}" method="POST">
+	    {{ csrf_field() }}
+	    {{ method_field('PUT') }}
+
+	    <fieldset>
+	        <label for="content">Title</label>
+	        <input type="text" name="title" value="{{ $%stub.lcSingle%->title }}">
+	    </fieldset>
+
+	    <fieldset>
+	        <label for="text">Text</label>
+	        <textarea name="text" rows="5">{{ $%stub.lcSingle%->text }}</textarea>
+	    </fieldset>
+
+	    <button type="submit">Save</button>
+	</form>
+
+@endsection

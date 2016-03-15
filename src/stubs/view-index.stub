@@ -1,0 +1,9 @@
+@extends('layouts.master')
+
+@section('content')
+
+    @foreach($%stub.lcPlural% as $%stub.lcSingle%)
+        <a href="{{ url(%stub.route%/show, [%stub.lcSingle%->id]) }}">{{ %stub.lcSingle%->name }}</a>
+    @endforeach
+
+@endsection

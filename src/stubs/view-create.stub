@@ -1,0 +1,23 @@
+@extends('layouts.master')
+
+@section('content')
+
+	<h2>Create a new %stub.lcSingle%</h2>
+
+	<form action="/%stub.route%" method="POST">
+	    {{ csrf_field() }}
+
+	    <fieldset>
+	        <label for="content">Title</label>
+	        <input type="text" name="title" value="{{ old('title') }}">
+	    </fieldset>
+
+	    <fieldset>
+	        <label for="text">Text</label>
+	        <textarea name="text" rows="5">{{ old('text') }}</textarea>
+	    </fieldset>
+
+	    <button type="submit">Save</button>
+	</form>
+
+@endsection

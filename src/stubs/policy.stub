@@ -1,0 +1,58 @@
+<?php
+
+namespace %stub.namespace%;
+
+use App\User;
+use App\%stub.ucSingle%;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class %stub.class%
+{
+    use HandlesAuthorization;
+
+    /**
+     * Create a new policy instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Determine if the given %lcSingle% can be updated by the user.
+     *
+     * @param  \App\User  $user
+     * @param  \App\%stub.ucSingle%  $%lcSingle%
+     * @return bool
+     */
+    public function edit(User $user, %stub.ucSingle% $%lcSingle%)
+    {
+        return $user->id === $%lcSingle%->user_id;
+    }
+
+    /**
+     * Determine if the given %lcSingle% can be updated by the user.
+     *
+     * @param  \App\User  $user
+     * @param  \App\%stub.ucSingle%  $%lcSingle%
+     * @return bool
+     */
+    public function update(User $user, %stub.ucSingle% $%lcSingle%)
+    {
+        return $user->id === $%lcSingle%->user_id;
+    }
+
+    /**
+     * Determine if the given %lcSingle% can be deleted by the user.
+     *
+     * @param  \App\User  $user
+     * @param  \App\%stub.ucSingle%  $%lcSingle%
+     * @return bool
+     */
+    public function destroy(User $user, %stub.ucSingle% $%lcSingle%)
+    {
+        return $user->id === $%lcSingle%->user_id;
+    }
+}
