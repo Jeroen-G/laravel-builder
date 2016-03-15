@@ -25,6 +25,16 @@ class LaravelBuilderServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/stubs' => base_path('stubs'),
         ], 'stubs');
+
+        $this->loadViewsFrom(__DIR__.'/gui/views', 'builder');
+
+        $this->publishes([
+            __DIR__.'/gui/views' => base_path('resources/views/vendor/builder'),
+        ]);
+
+        if (! $this->app->routesAreCached()) {
+            require __DIR__.'/gui/routes.php';
+        }
     }
 
     /**
@@ -35,7 +45,7 @@ class LaravelBuilderServiceProvider extends ServiceProvider
     {
         $this->commands($this->commands);
 
-        $this->app->singleton('Builder', function ($app) {
+        $this->app->singleton('builder', function ($app) {
             return new Builder(new Filesystem);
         });
     }
