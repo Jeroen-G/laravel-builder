@@ -6,7 +6,7 @@
     @include('builder::partials.status')
     @include('builder::partials.errors')
 
-    <p>This will create the controller, model, policy, form request and views.</p>
+    <p>This will create the controller, model, migration, policy, form request and views.</p>
     <p>After building, do not forget to register the policy and routes.</p>
 
     <form action="/builder/resource" method="POST" class="form-horizontal" role="form">
