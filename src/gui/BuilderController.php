@@ -64,6 +64,17 @@ class BuilderController extends Controller
         $b->run()->save();
         $b->reset();
 
+        // Migration
+        $b->stub = 'migration';
+        $b->namespace = 'App\\Migrations'; // Only present to not break the builder.
+        $b->class = 'Create'.$ucPlural.'Table';
+        $b->path = 'database/migrations';
+        $b->filename = date('Y_m_d_His').'_create_'.$lcPlural.'_table.php';
+        $b->run()
+            ->replace('%stub.lcPlural%', $lcPlural)
+            ->save();
+        $b->reset();
+
         // Policy
         $b->stub = 'policy';
         $b->namespace = 'App\\Policies';
@@ -91,6 +102,7 @@ class BuilderController extends Controller
             $b->stub = 'view-'.$view;
             $b->namespace = 'App\\Views'; // Only present to not break the builder.
             $b->class = $ucSingle.'View'; // Only present to not break the builder.
+            $b->filename = $view.'.blade.php';
             $b->path = 'resources/views/'.$lcPlural;
             $b->run()
                 ->replace('%stub.ucSingle%', $ucSingle)
@@ -102,7 +114,7 @@ class BuilderController extends Controller
             $b->reset();
         }
 
-        return back()->with('status', 'The resource has been created!');
+        return back()->with('status', 'The resource has been created! Don\'t forget registering the route and policy.');
     }
 }
 
