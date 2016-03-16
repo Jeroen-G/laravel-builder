@@ -43,6 +43,12 @@ class Builder
      */
     public $path;
 	
+    /**
+     * The (optional) filename.
+     * @var string
+     */
+    public $filename;
+
 	/**
      * Create a new instance.
      * @param Illuminate\Filesystem\Filesystem $files
@@ -87,6 +93,7 @@ class Builder
         $this->namespace = null;
         $this->class = null;
         $this->path = null;
+        $this->filename = null;
     }
 
     /**
@@ -209,6 +216,9 @@ class Builder
     {
         if( ! isset($this->path) or is_null($this->path)) {
             throw new Exception("No path provided");
+        }
+        if( isset($this->filename)) {
+            return base_path($this->path . '/' . $this->filename);
         }
         return base_path($this->path . '/' . $class . '.php');
     }
