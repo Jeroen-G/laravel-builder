@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h2>{{ %stub.lcSingle%->name }}</h2>
-	<p>{{ %stub.lcSingle%->text }}</p>
+	<h2>{{ $%stub.lcSingle%->title }}</h2>
+	<p>{{ $%stub.lcSingle%->text }}</p>
 
 @endsection

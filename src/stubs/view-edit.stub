@@ -4,7 +4,7 @@
 
 	<h2>Edit a %stub.lcSingle%</h2>
 
-	<form action="%stub.route%/{{ $%stub.lcSingle%->id }}" method="POST">
+	<form action="/%stub.route%/{{ $%stub.lcSingle%->id }}" method="POST">
 	    {{ csrf_field() }}
 	    {{ method_field('PUT') }}
 

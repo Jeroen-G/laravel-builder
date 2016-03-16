@@ -17,7 +17,7 @@ class %stub.class% extends Controller
      */
     public function index()
     {
-        return view('%stub.lcPlural%.index')->with('%stub.lcPlural%', %stub.lcSingle%::all());
+        return view('%stub.lcPlural%.index')->with('%stub.lcPlural%', %stub.ucSingle%::all());
     }
 
     /**
@@ -33,10 +33,10 @@ class %stub.class% extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  %stub.ucSingle%Request  $request
+     * @param  \App\Http\Requests\%stub.ucSingle%Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(%stub.ucSingle%Request $request)
+    public function store(Requests\%stub.ucSingle%Request $request)
     {
         %stub.ucSingle%::create([
             'title' => $request->title,
@@ -75,11 +75,11 @@ class %stub.class% extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  %stub.ucSingle%Request  $request
+     * @param  \App\Http\Requests\%stub.ucSingle%Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(%stub.ucSingle%Request $request, $id)
+    public function update(Requests\%stub.ucSingle%Request $request, $id)
     {
         $resource = %stub.ucSingle%::findOrFail($id);
 

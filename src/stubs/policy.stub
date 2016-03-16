@@ -21,38 +21,38 @@ class %stub.class%
     }
 
     /**
-     * Determine if the given %lcSingle% can be updated by the user.
+     * Determine if the given %stub.lcSingle% can be updated by the user.
      *
      * @param  \App\User  $user
-     * @param  \App\%stub.ucSingle%  $%lcSingle%
+     * @param  \App\%stub.ucSingle%  $%stub.lcSingle%
      * @return bool
      */
-    public function edit(User $user, %stub.ucSingle% $%lcSingle%)
+    public function edit(User $user, %stub.ucSingle% $%stub.lcSingle%)
     {
-        return $user->id === $%lcSingle%->user_id;
+        return $user->id === $%stub.lcSingle%->user_id;
     }
 
     /**
-     * Determine if the given %lcSingle% can be updated by the user.
+     * Determine if the given %stub.lcSingle% can be updated by the user.
      *
      * @param  \App\User  $user
-     * @param  \App\%stub.ucSingle%  $%lcSingle%
+     * @param  \App\%stub.ucSingle%  $%stub.lcSingle%
      * @return bool
      */
-    public function update(User $user, %stub.ucSingle% $%lcSingle%)
+    public function update(User $user, %stub.ucSingle% $%stub.lcSingle%)
     {
-        return $user->id === $%lcSingle%->user_id;
+        return $user->id === $%stub.lcSingle%->user_id;
     }
 
     /**
-     * Determine if the given %lcSingle% can be deleted by the user.
+     * Determine if the given %stub.lcSingle% can be deleted by the user.
      *
      * @param  \App\User  $user
-     * @param  \App\%stub.ucSingle%  $%lcSingle%
+     * @param  \App\%stub.ucSingle%  $%stub.lcSingle%
      * @return bool
      */
-    public function destroy(User $user, %stub.ucSingle% $%lcSingle%)
+    public function destroy(User $user, %stub.ucSingle% $%stub.lcSingle%)
     {
-        return $user->id === $%lcSingle%->user_id;
+        return $user->id === $%stub.lcSingle%->user_id;
     }
 }
