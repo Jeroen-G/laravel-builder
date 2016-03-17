@@ -5,6 +5,7 @@ namespace JeroenG\LaravelBuilder\gui;
 use Illuminate\Http\Request;
 
 use Builder;
+use Storage;
 use JeroenG\LaravelBuilder\Builder as LBuilder;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -97,6 +98,9 @@ class BuilderController extends Controller
         $b->reset();
 
         // Views
+        if( ! is_dir(base_path() . '/resources/views/'.$lcPlural)) {
+            mkdir(base_path() . '/resources/views/'.$lcPlural, 0755, true);
+        }
         $views = ['index', 'create', 'edit', 'show'];
         foreach ($views as $view) {
             $b->stub = 'view-'.$view;
