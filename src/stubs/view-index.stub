@@ -2,6 +2,9 @@
 
 @section('content')
 
+	@include('partials.status')
+    @include('partials.errors')
+
     @foreach($%stub.lcPlural% as $%stub.lcSingle%)
         <a href="{{ url('%stub.route%', [$%stub.lcSingle%->id]) }}">{{ $%stub.lcSingle%->title }}</a>
     @endforeach

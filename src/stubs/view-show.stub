@@ -2,6 +2,9 @@
 
 @section('content')
 
+	@include('partials.status')
+    @include('partials.errors')
+    
 	<h2>{{ $%stub.lcSingle%->title }}</h2>
 	<p>{{ $%stub.lcSingle%->text }}</p>
 

@@ -4,6 +4,9 @@
 
 	<h2>Create a new %stub.lcSingle%</h2>
 
+	@include('partials.status')
+    @include('partials.errors')
+    
 	<form action="/%stub.route%" method="POST">
 	    {{ csrf_field() }}
 
