@@ -74,9 +74,9 @@ It currently ships with very little stubs, if you have made your own, feel free 
 $ php artisan build model App\\Models Test app/Models/Test
 ```
 
-### Through the interface
+### Through the web interface
 
-Not present at the moment, if you want to help with making this UI, please contact me!
+After installing the package and publishing the stubs, the web interface is accessible by visiting `/builder`. You can create single files or a resource (controller, model, form request, policy, migration, views).
 
 ## Change log
 
