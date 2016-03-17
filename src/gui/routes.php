@@ -4,7 +4,7 @@ Route::get('builder', function () {
     return view('builder::index');
 });
 
-Route::group(['prefix' => 'builder'], function() {
+Route::group(['middleware' => ['web'], 'prefix' => 'builder'], function() {
 	Route::get('single', function () {
 		$files = glob(base_path('stubs').'/*');
 		$func = function ($value) {
