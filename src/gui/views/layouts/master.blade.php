@@ -24,13 +24,13 @@
         <a class="navbar-brand" href="#">Laravel Builder</a>
         <ul class="nav navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/builder">Home</a>
+                <a class="nav-link" href="{{ url('builder') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/builder/single">Build Single File</a>
+                <a class="nav-link" href="{{ url('builder/single') }}">Build Single File</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/builder/resource">Build Resource</a>
+                <a class="nav-link" href="{{ url('builder/resource') }}">Build Resource</a>
             </li>
         </ul>
     </nav>
