@@ -32,5 +32,15 @@
             "JeroenG\\LaravelBuilder\\": "src"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeroenG\\LaravelBuilder\\LaravelBuilderServiceProvider"
+            ],
+            "aliases": {
+                "Builder": "JeroenG\\LaravelBuilder\\LaravelBuilderFacade"
+            }
+        }
+    },
     "minimum-stability": "dev"
 }
